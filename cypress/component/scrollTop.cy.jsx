@@ -14,8 +14,8 @@ describe.only('scrollTop', () => {
     cy.get('[data-cy="placeholder"]')
       .scrollIntoView()
       .then(() => {
-        cy.document().should((document) => {
-          expect(document.documentElement.scrollTop).to.eq(608)
+        cy.document().should((doc) => {
+          expect(doc.documentElement.scrollTop).to.eq(608)
         })
       })
   })
@@ -30,8 +30,8 @@ describe.only('scrollTop', () => {
         <div style="height: 100vh">xx</div>
       </>
     ))
-    cy.document().then((e) => {
-      console.log('🚀 ~ cy.document ~ e2:', e.documentElement.scrollTop)
+    cy.document().then((doc) => {
+      console.log('🚀 ~ cy.document ~ e2:', doc.documentElement.scrollTop)
     })
   })
 })
